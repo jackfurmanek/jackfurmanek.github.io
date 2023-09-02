@@ -17,8 +17,8 @@
 			renderer.setSize( window.innerWidth, window.innerHeight );
 			document.body.appendChild( renderer.domElement );
 
-			const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-			const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+			const geometry = new THREE.CylinderGeometry( 1, 1, 0.1, 8 );
+			const material = new THREE.MeshBasicMaterial( { color: 0xFF5733 } );
 			const cube = new THREE.Mesh( geometry, material );
 			scene.add( cube );
 
@@ -30,7 +30,8 @@
 				requestAnimationFrame( animate );
 
 				cube.rotation.x += 0.02;
-				cube.rotation.y += 0.02;
+				cube.rotation.y += 0.03;
+                cube.rotation.z += 0.015;
 
                 sinY += 0.01;
                 cube.position.y = Math.sin(4 * sinY) / 1.5;
