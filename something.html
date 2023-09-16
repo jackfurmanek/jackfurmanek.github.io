@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Jack Furmanek's Kickass Website</title>
+		<style>
+			body {
+				margin: 0;
+				overflow: hidden; /* Hide overflow to prevent scrolling of the background content */
+			}
+
+			.foreground-container {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				overflow-y: auto; /* Enable vertical scrolling */
+				z-index: 1; /* Place it above the canvas */
+			}
+
+			.foreground {
+				color: white;
+				padding: 20px; /* Add some padding for visibility */
+				background: rgba(0, 0, 0, 0); /* Add a semi-transparent background */
+			}
+
+			canvas {
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 0; /* Place the canvas in the background */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="foreground-container" onscroll="moveCamera()">
+			<div class="foreground">
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				<p>what?</p>
+				
+			</div>
+		</div>
+
+		<script src="three.js"></script>
+		<script>
+			const scene = new THREE.Scene();
+			const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+			const renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+
+			const geometry = new THREE.BoxGeometry( 10, 20, 2 );
+			const material = new THREE.MeshBasicMaterial( { color: 0xFF5733, wireframe: true } );
+			const cube = new THREE.Mesh( geometry, material );
+			scene.add( cube );
+
+			camera.position.z = 40;
+			const cubeInitY = 0;
+			cube.rotation.y = cubeInitY;
+
+			const cameraInitX = 0;
+			camera.position.x = cameraInitX;
+
+			function moveCamera() {
+				const container = document.querySelector('.foreground-container');
+				const scrollPosition = container.scrollTop;
+
+				camera.position.x = (scrollPosition * -0.05) + cameraInitX;
+			}
+
+			sincount = 0;
+
+			function animate() {
+				requestAnimationFrame(animate);
+
+				sincount += 0.01;
+				cube.position.y = 3 * Math.sin(sincount * 4);
+				cube.rotation.x = 0.25 * Math.sin(sincount);
+				cube.rotation.y = (0.15 * Math.sin(sincount * 1.25)) + cubeInitY;
+				cube.rotation.z = 0.15 * Math.sin(sincount * 1.25);
+
+				renderer.render(scene, camera);
+			}
+
+			animate();
+		</script>
+	</body>
+</html>
